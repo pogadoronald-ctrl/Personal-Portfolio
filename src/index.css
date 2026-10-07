@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@keyframes marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translateX(-30%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-marquee-left {
+    animation: marquee-left 25s linear infinite;
+}
+
+.animate-marquee-right {
+    animation: marquee-right 25s linear infinite;
+}
