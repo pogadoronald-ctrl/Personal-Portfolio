@@ -4,7 +4,7 @@ export default function Hero() {
     return (
         <section
             id="top"
-            className="relative grid min-h-[calc(100svh-4rem)] overflow-hidden bg-white md:grid-cols-2"
+            className="relative grid min-h-[calc(100svh-4rem)] overflow-hidden bg-white md:grid-cols-2 dark:bg-black"
         >
             <div
                 aria-hidden="true"
