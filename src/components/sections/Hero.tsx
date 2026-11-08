@@ -62,8 +62,8 @@ export default function Hero() {
             <div className="relative z-10 flex min-h-svh items-end px-6 pb-12 pt-24 sm:px-10 md:min-h-0 md:items-center md:py-16 lg:px-16 xl:px-24">
                 <div className="mx-auto max-w-2xl text-center md:mx-0 md:text-left">
                     <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
-                        <span className="h-px w-10 bg-blue-600 dark:bg-slate-100" />
-                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-slate-100 md:text-blue-600 dark:md:text-slate-100">
+                        <span className="h-px w-5 bg-white dark:bg-slate-100 md:bg-blue-600 md:w-10" />
+                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white dark:text-slate-100 md:text-blue-600 lg:text-blue-600 dark:md:text-slate-100">
                             {site.availability}
                         </p>
                     </div>
