@@ -34,7 +34,7 @@
     stroke-width: 2;
     stroke-opacity: 0.4;
     stroke-linecap: round;
-    animation: wave-motion 6s ease-in-out infinite alternate;
+    animation: wave-motion 8s linear infinite alternate;
 }
 
 .wave-one {
@@ -63,11 +63,17 @@
 
 @keyframes wave-motion {
     from {
-        transform: translate(-20px, -15px);
+        transform: translate(-100px, -15px);
     }
 
     to {
-        transform: translate(20px, 15px);
+        transform: translate(100px, 15px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wave-line {
+        animation: none;
     }
 }
 
