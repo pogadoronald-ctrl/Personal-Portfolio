@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import { site } from '../../data/site'
+import { site } from '../../../data/site'
 
 export default function Hero() {
     const [darkMode] = useState(() => {
