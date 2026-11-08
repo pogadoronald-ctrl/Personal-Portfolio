@@ -28,3 +28,51 @@
 .animate-marquee-right {
     animation: marquee-right 25s linear infinite;
 }
+
+.wave-line {
+    stroke: #3b82f6;
+    stroke-width: 2;
+    stroke-opacity: 0.4;
+    stroke-linecap: round;
+    animation: wave-motion 6s ease-in-out infinite alternate;
+}
+
+.wave-one {
+    animation-duration: 5s;
+}
+
+.wave-two {
+    animation-duration: 6s;
+    animation-delay: -1s;
+}
+
+.wave-three {
+    animation-duration: 11s;
+    animation-delay: -3s;
+}
+
+.wave-four{
+    animation-duration: 5s;
+    animation-delay: -2s;
+}
+
+.wave-five{
+    animation-duration: 8s;
+    animation-delay: -2s
+}
+
+@keyframes wave-motion {
+    from {
+        transform: translate(-20px, -15px);
+    }
+
+    to {
+        transform: translate(20px, 15px);
+    }
+}
+
+.dark .wave-line {
+    stroke: #ffffff;
+    stroke-opacity: 0.4;
+    stroke-width: 2;
+}

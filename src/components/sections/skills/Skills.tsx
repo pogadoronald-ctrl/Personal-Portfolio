@@ -1,14 +1,16 @@
 
 import SkillCard from './SkillCard'
 import { skillCategories } from './skillsData'
+import WaveBackground from '../../background/WaveBackground'
 
 export default function Skills() {
     return (
         <section
             id="skills"
-            className="px-6 py-20 md:px-12 lg:px-20 dark:bg-slate-950"
+            className=" relative overflow-hidden px-6 py-20 md:px-12 lg:px-20 dark:bg-slate-950"
         >
-            <div className="mx-auto max-w-7xl">
+            <WaveBackground />
+            <div className="relative z-10 mx-auto max-w-7xl">
                 <div className="mb-12">
                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-slate-100">
                         What I Work With
