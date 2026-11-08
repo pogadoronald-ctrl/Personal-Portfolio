@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import { site } from '../../data/site'
 
 export default function Hero() {
-    const [darkMode, setDarkMode] = useState(() => {
+    const [darkMode] = useState(() => {
         return localStorage.getItem('theme') === 'dark'
     })
 
