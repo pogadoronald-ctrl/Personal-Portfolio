@@ -1,4 +1,14 @@
+import { useState } from 'react'
+import { projects } from './projectsData'
+import ProjectCard from './ProjectCard'
+import type { Project } from './projectsData'
+import ProjectModal from './ProjectModal'
+
 export default function Projects(){
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
+    const closeModal = () => setSelectedProject(null)
+
     return(
         <>
         <section 
@@ -20,7 +30,17 @@ export default function Projects(){
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                
+                {projects.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        project={project}
+                        onViewProject={() => setSelectedProject(project)}
+                    />
+                ))}
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={closeModal}
+                />
             </div>
         </section>
         </>
