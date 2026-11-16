@@ -116,7 +116,7 @@ export default function Header() {
                                 ? 'Switch to light mode'
                                 : 'Switch to dark mode'
                         }
-                        className="rounded-full p-2 text-slate-700 transition hover:bg-slate-100 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 dark:hover:bg-slate-800"
+                        className="cursor-pointer rounded-full p-2 text-slate-700 transition hover:bg-slate-100 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 dark:hover:bg-slate-800"
                     >
                         {darkMode ? (
                             <Sun size={19} strokeWidth={2} />
