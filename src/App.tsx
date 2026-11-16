@@ -3,6 +3,7 @@ import Hero from './components/sections/hero/Hero'
 import Skills from './components/sections/skills/Skills'
 import Projects from './components/sections/projects/Projects'
 import Experience from './components/sections/experience/Experience'
+import About from './components/sections/about/About'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <About />
         <Skills />
         <Projects />
         <Experience />
