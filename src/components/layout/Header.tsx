@@ -9,6 +9,8 @@ export default function Header() {
         return localStorage.getItem('theme') === 'dark'
     })
 
+    const [isScrolled, setIsScrolled] = useState(false)
+
     useEffect(() => {
         const sections = navLinks
             .map((link) => document.querySelector(link.href))
@@ -46,8 +48,24 @@ export default function Header() {
         localStorage.setItem('theme', darkMode ? 'dark': 'light')
     }, [darkMode])
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <header className="absolute top-0 z-50 w-full bg-transparent">
+        <header
+            className={`fixed top-0 z-50 w-full transition-all transition-colors duration-250 ${
+                isScrolled
+                    ? 'border-b border-slate-200 bg-white/60 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/60'
+                    : 'border-b border-transparent bg-transparent'
+            }`}
+        >
             <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
                 <a
                     href="#top"
