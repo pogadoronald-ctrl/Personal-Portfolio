@@ -11,19 +11,21 @@ export default function Skills() {
         >
             <WaveBackground />
             <div className="relative z-10 mx-auto max-w-7xl">
-                <div className="mb-12">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-slate-100">
-                        What I Work With
-                    </p>
+                <div className='flex mx-auto mb-12 max-w-2xl justify-center'>
+                    <div className="flex flex-col items-center text-center">
+                        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-slate-100">
+                            What I Work With
+                        </p>
 
-                    <h2 className="text-4xl font-bold text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
-                        Technical Skills
-                    </h2>
+                        <h2 className="text-4xl font-bold text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
+                            Technical Skills
+                        </h2>
 
-                    <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-                        Technologies and tools I use to build, develop,
-                        and test applications.
-                    </p>
+                        <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
+                            Technologies and tools I use to build, develop,
+                            and test applications.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
