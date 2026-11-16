@@ -16,6 +16,13 @@ export default function Header() {
             .map((link) => document.querySelector(link.href))
             .filter(Boolean)
 
+            console.log(
+                navLinks.map((link) => ({
+                    href: link.href,
+                    section: document.querySelector(link.href),
+                }))
+            )
+
         const observer = new IntersectionObserver(
             (entries) => {
                 const visibleSections = entries
@@ -25,15 +32,16 @@ export default function Header() {
                             b.intersectionRatio - a.intersectionRatio
                     )
 
-                if (visibleSections[0]) {
+                if (visibleSections.length > 0) {
                     setActiveSection(visibleSections[0].target.id)
                 }
             },
             {
                 threshold: [0.2, 0.5, 0.8],
-                rootMargin: '-20% 0px -60% 0px',
+                rootMargin: '-100px 0px -50% 0px',
             }
         )
+        
 
         sections.forEach((section) => {
             if (section) observer.observe(section)
@@ -88,7 +96,7 @@ export default function Header() {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    className={`relative py-2 text-sm font-medium transition-colors duration-200 hover:bg-slate-100 rounded-2xl px-2 dark:hover:bg-slate-800 ${
+                                    className={`relative py-1 text-sm font-medium transition-colors duration-200 hover:bg-slate-100 rounded-xl px-2 dark:hover:bg-slate-800 ${
                                         isActive
                                             ? 'text-blue-600 dark:text-blue-400'
                                             : 'text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400'
