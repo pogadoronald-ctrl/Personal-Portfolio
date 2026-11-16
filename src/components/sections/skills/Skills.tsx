@@ -7,7 +7,7 @@ export default function Skills() {
     return (
         <section
             id="skills"
-            className=" relative overflow-hidden transition-colors duration-300 px-6 py-20 md:px-12 lg:px-20 dark:bg-slate-950"
+            className="scroll-mt-16 relative overflow-hidden transition-colors duration-300 px-6 py-20 md:px-12 lg:px-20 dark:bg-slate-950"
         >
             <WaveBackground />
             <div className="relative z-10 mx-auto max-w-7xl">

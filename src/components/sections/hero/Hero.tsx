@@ -14,8 +14,8 @@ export default function Hero() {
 
     return (
         <section
-            id="top"
-            className="relative grid min-h-svh grid-cols-1 overflow-hidden bg-white transition-colors duration-300 dark:bg-slate-950 md:grid md:grid-cols-2"
+            id="about"
+            className="scroll-mt-16  relative grid min-h-svh grid-cols-1 overflow-hidden bg-white transition-colors duration-300 dark:bg-slate-950 md:grid md:grid-cols-2"
         >
             <div
                 aria-hidden="true"

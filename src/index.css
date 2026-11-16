@@ -1,4 +1,11 @@
 @import "tailwindcss";
+
+@layer base{
+    html {
+        @apply scroll-smooth;
+    }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes marquee-left {
