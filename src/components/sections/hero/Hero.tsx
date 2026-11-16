@@ -19,7 +19,7 @@ export default function Hero() {
         >
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 z-0 flex flex-col justify-center overflow-hidden opacity-[0.08]"
+                className="pointer-events-none absolute inset-0 z-0 flex flex-col justify-center overflow-hidden opacity-[0.08] dark:opacity-[0.1]"
             >
                 {Array.from({ length: 9 }).map((_, index) => (
                     <div
