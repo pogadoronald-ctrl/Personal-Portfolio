@@ -12,7 +12,7 @@ export default function Projects(){
     return(
         <>
         <section 
-            id='projects' 
+            id='what i can do' 
             className="scroll-mt-16 px-6 py-20 md:px-12 lg:px-20 transition-colors duration-300 dark:bg-slate-950"
         >
             <div className="flex mx-auto max-w-7xl justify-center">
