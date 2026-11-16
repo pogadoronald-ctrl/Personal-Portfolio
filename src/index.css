@@ -82,3 +82,14 @@
     stroke-opacity: 0.4;
     stroke-width: 2;
 }
+
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}

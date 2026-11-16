@@ -22,6 +22,12 @@ export default function ProjectModal({
     useEffect(() => {
         if (!project) return
 
+        document.body.style.overflow = 'hidden'
+
+        return () => {
+            document.body.style.overflow = ''
+        }
+
     }, [project, onClose])
 
     if (!project) return null
@@ -58,13 +64,13 @@ export default function ProjectModal({
                     <button
                         onClick={onClose}
                         aria-label="Close project details"
-                        className="rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+                        className="cursor-pointer rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
                     >
                         <X size={20} />
                     </button>
                 </div>
 
-                <div className="overflow-y-auto">
+                <div className="overflow-y-auto scrollbar-hide">
 
                     <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-800">
                         <img
@@ -78,7 +84,7 @@ export default function ProjectModal({
                                 <button
                                     onClick={previousImage}
                                     aria-label="Previous image"
-                                    className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow transition hover:bg-white dark:bg-slate-900/90 dark:text-white"
+                                    className="cursor-pointer absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow transition hover:bg-white dark:bg-slate-900/90 dark:text-white dark:hover:bg-slate-800"
                                 >
                                     <ChevronLeft size={20} />
                                 </button>
@@ -86,7 +92,7 @@ export default function ProjectModal({
                                 <button
                                     onClick={nextImage}
                                     aria-label="Next image"
-                                    className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow transition hover:bg-white dark:bg-slate-900/90 dark:text-white"
+                                    className="cursor-pointer absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow transition hover:bg-white dark:bg-slate-900/90 dark:text-white dark:hover:bg-slate-800"
                                 >
                                     <ChevronRight size={20} />
                                 </button>
