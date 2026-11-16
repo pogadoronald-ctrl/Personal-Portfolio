@@ -13,7 +13,7 @@ export default function Projects(){
         <>
         <section 
             id='projects' 
-            className="px-6 py-20 md:px-12 lg:px-20 dark:bg-slate-950"
+            className="px-6 py-20 md:px-12 lg:px-20 transition-colors duration-300 dark:bg-slate-950"
         >
             <div className="flex mx-auto max-w-7xl justify-center">
                 <div className="flex flex-col mb-12 text-center">
