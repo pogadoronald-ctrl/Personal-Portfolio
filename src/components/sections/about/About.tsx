@@ -4,8 +4,25 @@ import { aboutData, tabs, type TabId } from './aboutData'
 
 export default function About(){
     const [activeTab, setActiveTab] = useState<TabId>('education')
+    const [imageIndex, setImageIndex] = useState(0)
 
     const content = aboutData[activeTab]
+
+    const currentImageIndex = imageIndex % content.images.length
+
+    const stackedImages = Array.from(
+        { length: Math.min(2, content.images.length - 1) },
+        (_, index) => ({
+            src: content.images[
+                (currentImageIndex + index + 1) % content.images.length
+            ],
+            index,
+        })
+    )
+
+    const handleNextImage = () => {
+        setImageIndex((prev) => (prev + 1) % content.images.length)
+    }
     return(
         <section
             id='about'
@@ -33,7 +50,10 @@ export default function About(){
                     return (
                         <button
                             key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
+                            onClick={() => {
+                                setActiveTab(tab.id)
+                                setImageIndex(0)
+                            }}
                             role="tab"
                             aria-selected={isActive}
                             className={`flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 ${
@@ -52,22 +72,69 @@ export default function About(){
             <div
                     key={activeTab}
                     role="tabpanel"
-                    className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16"
+                    className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16"
                 >
                 <div className="relative mx-auto w-full max-w-xl">
-                    <div className="grid grid-cols-5 grid-rows-5 gap-3">
-                        <div className="col-span-4 row-span-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
+                    <div className="relative aspect-[4/5]">
+
+                        {stackedImages.map((image) => (
+                            <div
+                                key={image.index}
+                                className="absolute inset-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-xl dark:border-slate-800 dark:bg-slate-800"
+                                style={{
+                                    zIndex: 10 - image.index,
+                                    transform:
+                                        image.index === 0
+                                            ? 'translate(14px, -8px) rotate(4deg)'
+                                            : 'translate(25px, -15px) rotate(8deg)',
+                                }}
+                            >
+                                <img
+                                    src={image.src}
+                                    alt=""
+                                    className={`h-full w-full transition-transform duration-500 ${
+                                        activeTab === 'certificates'
+                                            ? 'object-contain'
+                                            : 'object-cover group-hover:scale-105'
+                                    }`}
+                                />
+                            </div>
+                        ))}
+
+                        <button
+                            type="button"
+                            onClick={handleNextImage}
+                            disabled={content.images.length <= 1}
+                            aria-label="View next photo"
+                            className={`group absolute inset-0 z-20 overflow-hidden rounded-2xl ${
+                                activeTab === 'certificates'
+                                    ? 'bg-white dark:bg-slate-950'
+                                    : 'border border-slate-200 bg-slate-100 shadow-2xl dark:border-slate-800 dark:bg-slate-900'
+                            } text-left transition-colors duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 disabled:cursor-default`}>
                             <img
-                                src={content.images[0]}
+                                src={content.images[currentImageIndex]}
                                 alt={content.title}
-                                className="h-full min-h-[380px] w-full object-cover transition-transform duration-500 hover:scale-105"
+                                className={`h-full w-full ${
+                                    activeTab === 'certificates'
+                                        ? 'object-contain'
+                                        : 'object-cover'
+                                }`}
                             />
-                        </div>
+
+                            {content.images.length > 1 && (
+                                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 text-xs font-medium text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+                                    Click to explore
+                                    <span>
+                                        {currentImageIndex + 1} / {content.images.length}
+                                    </span>
+                                </div>
+                            )}
+                        </button>
                     </div>
                 </div>
             
 
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-start">
                 <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
                     {content.eyebrow}
                 </p>
