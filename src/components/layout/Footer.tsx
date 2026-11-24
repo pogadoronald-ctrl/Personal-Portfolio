@@ -8,7 +8,6 @@ export default function Footer(){
 
                 <div className="flex flex-col md:flex-row justify-between gap-10">
 
-                    {/* Brand */}
                     <div>
                         <a href="#home" className="text-2xl font-bold text-gray-900 dark:text-white">
                             RON<span className="text-blue-600">.</span>
@@ -19,7 +18,6 @@ export default function Footer(){
                         </p>
                     </div>
 
-                    {/* Quick Links */}
                     <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
                             Explore
@@ -40,7 +38,7 @@ export default function Footer(){
                     </div>
 
                     <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-center">
+                        <h3 className="font-semibold text-gray-900 dark:text-white mb-4 md:text-center">
                             Connect 
                         </h3>
 
