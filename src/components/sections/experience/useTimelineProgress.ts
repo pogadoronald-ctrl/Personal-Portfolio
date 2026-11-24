@@ -14,12 +14,12 @@ export default function useTimelineProgress() {
 
             const rect = timelineRef.current.getBoundingClientRect()
             const timelineTop = window.scrollY + rect.top
-            const timelineBottom = timelineTop + rect.height
-            const scrollPosition = window.scrollY + window.innerHeight * 0.01
+            const timelineHeight = rect.height
+            const scrollPosition = window.scrollY + window.innerHeight * 0.3
 
             const progress = Math.min(
                 Math.max(
-                    (scrollPosition - timelineTop) / (timelineBottom - timelineTop),
+                    (scrollPosition - timelineTop) / timelineHeight,
                     0
                 ),
                 1
@@ -29,7 +29,7 @@ export default function useTimelineProgress() {
         }
 
         const updateMarkers = () => {
-            const activationPoint = window.innerHeight * 0.5
+            const activationPoint = window.innerHeight * 0.3
 
             setActiveMarkers(
                 markerRefs.current.map((marker) => {
