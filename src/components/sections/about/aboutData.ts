@@ -75,7 +75,8 @@ export const certificateData: CertificateData[] = [
         name: 'Google AI Fundamentals',
         issuer: 'Google',
         date: 'August 25, 2026',
-        description: 'An introductory course on AI concepts and tools.',
+        description: 
+            'An introduction to generative AI, prompt engineering, and responsible AI use in the workplace.',
         link: 'https://coursera.org/share/82b65661db70564473dd179a801ce49a'
     }
 ]

@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { X, ExternalLink } from 'lucide-react'
+import { X } from 'lucide-react'
 import { certificateData } from './aboutData'
 
 export default function Certificate() {
@@ -48,17 +48,19 @@ export default function Certificate() {
                                 {certificate.description}
                             </p>
 
-                            {certificate.link && (
-                                <a
-                                    href={certificate.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                                >
-                                    View credential
-                                    <ExternalLink size={14} />
-                                </a>
-                            )}
+                            <div className='mt-2 border-t border-slate-200 dark:border-slate-800'> 
+                                {certificate.link && (
+                                    <a
+                                        href={certificate.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 rounded-lg p-2 hover:bg-blue-100 dark:text-blue-400 dark:hover:text-blue-300"
+                                    >
+                                        View credential
+                                        <span aria-hidden="true"> →</span>
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </article>
                 ))}
