@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, FileText, ArrowDownToLine, ExternalLink } from "lucide-react"
 import ContactForm from "./ContactForm"
 
 export default function Contact(){
@@ -7,108 +7,117 @@ export default function Contact(){
             id='contact'
             className="scroll-mt-16 overflow-hidden px-6 py-20 md:px-12 lg:px-20 transition-colors duration-300 dark:bg-slate-950"
         >
-            <div className="flex mx-auto max-w-7xl justify-center">
-                <div className="flex flex-col mb-12 text-center">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-slate-100">
-                        Let's Talk
-                    </p>
+            <div className="grid grid-cols-1 max-w-7xl mx-auto gap-12 md:grid-cols-2 md:gap-8">
+                <div className="flex flex-col mt-8 gap-10">
+                    <div className="flex flex-col">
+                        <p className="mb-4 text-base font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-slate-100">
+                            Contact Me
+                        </p>
 
-                    <h2 className="text-4xl font-bold text-slate-900 md:text-4xl lg:text-5xl dark:text-white">
-                        Contact Me
-                    </h2>
+                        <h2 className="text-5xl font-bold leading-tight text-slate-900 md:text-6xl lg:text-7xl dark:text-white">
+                            Let's Work Together!
+                        </h2>
 
-                    <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-                        Have a project in mind, a question, or an opportunity to share? I'd love to hear from you and explore how we can connect.
-                    </p>
-                </div>
-            </div>
-
-            
-            <div className="grid grid-cols-1 mt-8 gap-8 md:grid-cols-2 md:gap-8">
-                <div className="flex flex-col items-center gap-8">
-                    <div className="flex justify-center">
-                        <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-                            Contact Information
-                        </h3>
+                        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                            Tell me whether you have a project in mind, an opportunity to share, or simply want to connect. I'm open to opportunities where I can contribute, collaborate, and explore how we can create something valuable together.
+                        </p>
                     </div>
+                    
+                    <div className="flex flex-col gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a
+                                href="mailto:pogado.ronald@gmail.com"
+                                className="flex items-center justify-between group rounded-xl border border-slate-200 p-5 transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50 dark:border-slate-800 dark:hover:border-blue-900 dark:hover:bg-slate-900"
+                            >
+                                <div className="flex flex-col gap-3">
+                                    <Mail size={23} className="dark:text-blue-400" />
+                                    <div>
+                                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                                            Email
+                                        </p>
+                                        <p className="break-all font-semibold text-slate-800 dark:text-slate-200">
+                                            pogado.ronald@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                                <ExternalLink
+                                    size={18}
+                                    className="text-slate-400 transition-colors group-hover:text-blue-600"
+                                />
+                            </a>
 
-                    <div className="mx-auto flex w-fit flex-col gap-7">
-                        <div className="flex items-center gap-4">
-                            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
-                                <Mail size={22} />
-                            </div>
-                            <div className="min-w-0">
-                                <p className="text-md text-slate-500 dark:text-slate-400">Email</p>
-                                <p className="font-medium text-slate-800 dark:text-slate-200 ">
-                                    pogado.ronald@gmail.com
-                                </p>
-                            </div>
-                        </div>
+                            <a
+                                href="https://linkedin.com/in/ronald-jhon-pogado-1290b33a8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex group items-center justify-between rounded-xl border border-slate-200 p-5 transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50 dark:border-slate-800 dark:hover:border-blue-900 dark:hover:bg-slate-900"
+                            >
+                                <div className="flex flex-col gap-3"> 
+                                    <i className="devicon-linkedin-plain text-2xl text-black dark:text-blue-400" />
+                                    <div>
+                                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                                            LinkedIn
+                                        </p>
+                                        <p className="font-semibold text-slate-800 dark:text-slate-200">
+                                            View Profile
+                                        </p>
+                                    </div>
+                                </div>
+                                    <ExternalLink
+                                        size={18}
+                                        className="text-slate-400 transition-colors group-hover:text-blue-600"
+                                    />
+                            </a>
 
-                        <div className="flex items-center gap-4">
-                            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
-                                <Phone size={22} />
-                            </div>
-                            <div>
-                                <p className="text-md text-slate-500 dark:text-slate-400">Phone Number</p>
-                                <p className="font-medium text-slate-800 dark:text-slate-200">
-                                    09995022221
-                                </p>
-                            </div>
-                        </div>
+                            <a
+                                href="https://github.com/pogadoronald-ctrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex group items-center justify-between rounded-xl border border-slate-200 p-5 transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50 dark:border-slate-800 dark:hover:border-blue-900 dark:hover:bg-slate-900"
+                            >
+                                <div className="flex flex-col gap-3"> 
+                                    <i className="devicon-github-original  text-2xl text-slate-800 dark:text-blue-600" />
+                                    <div>
+                                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                                            GitHub
+                                        </p>
+                                        <p className="font-semibold text-slate-800 dark:text-slate-200">
+                                            View Profile
+                                        </p>
+                                    </div>
+                                </div>
+                                <ExternalLink
+                                    size={18}
+                                    className="text-slate-400 transition-colors group-hover:text-blue-600"
+                                />
+                            </a>
 
-                        <div className="flex items-center gap-4">
-                            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
-                                <MapPin size={22} />
+                            <div className="flex flex-col transition-all duration-300 gap-3 rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+                                <MapPin size={23} className="dark:text-blue-400" />
+                                <div>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                                        Location
+                                    </p>
+                                    <p className="font-semibold text-slate-800 dark:text-slate-200">
+                                        Cagayan de Oro City, Misamis Oriental, Philippines
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <p className="text-md text-slate-500 dark:text-slate-400">Location</p>
-                                <p className="font-medium text-slate-800 dark:text-slate-200">
-                                    Cagayan de Oro City, Misamis Oriental, Philippines
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-center mt-8 gap-4">
-                            <h3 className="text-lg font-semibold text-center text-slate-900 dark:text-white">
-                                Connect with Me
-                            </h3>
-
-                            <div className="flex items-center gap-4">
                                 <a
-                                    href="https://github.com/pogadoronald-ctrl"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="GitHub"
-                                    className="transition-transform duration-300 hover:-translate-y-1"
+                                    href="/resume.pdf"
+                                    download="Ronald_Pogado_Resume.pdf"
+                                    className="group inline-flex justify-self-start items-center gap-2 rounded-4xl bg-blue-600 px-5 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1"
                                 >
-                                    <i className="devicon-github-original text-4xl dark:text-white" />
+                                    Download Resume
+                                    <span className="transition-transform text-md duration-200 group-hover:translate-x-2">
+                                        →
+                                    </span>
                                 </a>
-
-                                <a
-                                    href="https://linkedin.com/in/ronald-jhon-pogado-1290b33a8"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
-                                    className="transition-transform duration-300 hover:-translate-y-1 "
-                                >
-                                    <i className="devicon-linkedin-plain colored text-4xl" />
-                                </a>
-
-                                <a
-                                    href="https://www.facebook.com/ronald.pogado.2024"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Facebook"
-                                    className="transition-transform duration-300 hover:-translate-y-1 "
-                                >
-                                    <i className="devicon-facebook-plain colored text-4xl" />
-                                </a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
+
+                    
 
                 <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50 transition-colors duration-300 md:p-8 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
                     <div className="flex flex-col items-center mb-6 ">
@@ -118,9 +127,7 @@ export default function Contact(){
                     </div>
                     <ContactForm />
                 </div>
-
             </div>
-
         </section>
     )
 }
