@@ -32,7 +32,7 @@ export default function AboutGallery({
     }, [images])
 
     return (
-        <div className="relative mx-auto w-full max-w-xl">
+        <div className="relative mx-auto w-full max-w-md">
             <div className="relative aspect-[4/5]">
                 {stackedImages.map((image) => (
                     <div
