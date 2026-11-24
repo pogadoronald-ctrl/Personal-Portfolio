@@ -22,7 +22,7 @@ export default function Footer(){
                     {/* Quick Links */}
                     <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                            Quick Links
+                            Explore
                         </h3>
 
                         <ul className="space-y-2 text-sm font-semibold text-gray-600 dark:text-gray-400">
