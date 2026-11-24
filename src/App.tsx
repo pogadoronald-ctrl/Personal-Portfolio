@@ -4,6 +4,7 @@ import Skills from './components/sections/skills/Skills'
 import Projects from './components/sections/projects/Projects'
 import Experience from './components/sections/experience/Experience'
 import About from './components/sections/about/About'
+import Contact from './components/sections/contact/Contact'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Projects />
         <Skills />
         <Experience />
+        <Contact />
       </main>
     </>
   )
