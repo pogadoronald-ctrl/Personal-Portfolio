@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, FileText, ArrowDownToLine, ExternalLink } from "lucide-react"
+import { Mail,  MapPin, ExternalLink } from "lucide-react"
 import ContactForm from "./ContactForm"
 
 export default function Contact(){
