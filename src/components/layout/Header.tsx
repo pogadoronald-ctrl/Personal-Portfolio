@@ -14,40 +14,33 @@ export default function Header() {
     useEffect(() => {
         const sections = navLinks
             .map((link) => document.querySelector(link.href))
-            .filter(Boolean)
+            .filter(Boolean) as HTMLElement[]
 
-            console.log(
-                navLinks.map((link) => ({
-                    href: link.href,
-                    section: document.querySelector(link.href),
-                }))
-            )
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visibleSections = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            b.intersectionRatio - a.intersectionRatio
-                    )
-
-                if (visibleSections.length > 0) {
-                    setActiveSection(visibleSections[0].target.id)
-                }
-            },
-            {
-                threshold: [0.2, 0.5, 0.8],
-                rootMargin: '-100px 0px -50% 0px',
-            }
-        )
         
+        const handleScroll = () => {
+            const activationPoint = 150
+            let currentSection = 'top'
 
-        sections.forEach((section) => {
-            if (section) observer.observe(section)
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect()
+
+                if (rect.top <= activationPoint) {
+                    currentSection = section.id
+                }
+            }
+
+            setActiveSection(currentSection)
+        }
+
+        window.addEventListener('scroll', handleScroll, {
+            passive: true,
         })
 
-        return () => observer.disconnect()
+        handleScroll()
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll)
+            }
     }, [])
 
     useEffect(() => {
