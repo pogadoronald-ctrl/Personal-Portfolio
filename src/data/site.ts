@@ -12,6 +12,6 @@ export const site = {
 export const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about'},
-    { label: 'What I Can Do', href: '#what i can do' }, 
+    { label: 'What I Can Do', href: '#projects' }, 
     { label: 'Contact', href: '#contact' },
 ]
