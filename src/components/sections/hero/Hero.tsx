@@ -51,7 +51,7 @@ export default function Hero() {
 
             <div className="absolute inset-0 z-0 md:relative md:inset-auto md:h-auto">
                 <img
-                    src="/photo.png"
+                    src="/photo.webp"
                     alt={`Portrait of ${site.name}`}
                     className="h-full w-full object-cover object-top"
                     fetchPriority="high"
